@@ -5,9 +5,17 @@ class SignUpPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    List images=[
+      "g.png",
+      "t.png",
+      "f.png",
+    ];
+
     double w =MediaQuery.of(context).size.width;
     double h =MediaQuery.of(context).size.height;
     return Scaffold(
+
       backgroundColor: Colors.white,
       body: ListView(
         children: [
@@ -17,11 +25,23 @@ class SignUpPage extends StatelessWidget {
             decoration: const BoxDecoration(
               image: DecorationImage(
                   image: AssetImage(
-                      'img/loginimg.png'
+                      'img/signup.png'
 
                   ),
                   fit: BoxFit.cover
               ),
+            ),
+            child: Column(
+              children: [
+                SizedBox(height:h*0.14,),
+                CircleAvatar(
+                  backgroundColor: Colors.white,
+                  radius: 60,
+                  backgroundImage: AssetImage(
+                      "img/profile2.png"
+                  ),
+                ),
+              ],
             ),
 
           ),
@@ -31,18 +51,7 @@ class SignUpPage extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text('Hello',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 70,
-                  ),
-                ),
-                Text('Sign into your account',
-                  style: TextStyle(
-                    fontSize: 20,
-                    color: Colors.grey[500],
-                  ),
-                ),
+
                 SizedBox(height: 50,),
                 Container(
                   decoration: BoxDecoration(
@@ -59,6 +68,8 @@ class SignUpPage extends StatelessWidget {
                   ),
                   child: TextField(
                     decoration: InputDecoration(
+                      hintText: "Email",
+                      prefixIcon: Icon(Icons.email,color: Colors.deepOrange,),
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(30),
                         borderSide: BorderSide(
@@ -95,6 +106,8 @@ class SignUpPage extends StatelessWidget {
                   ),
                   child: TextField(
                     decoration: InputDecoration(
+                      hintText: "password",
+                      prefixIcon: Icon(Icons.password,color: Colors.deepOrange,),
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(30),
                         borderSide: BorderSide(
@@ -116,17 +129,17 @@ class SignUpPage extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 20,),
-                Row(
-                  children: [
-                    Expanded(child: Container(),),
-                    Text('Sign into your account',
-                      style: TextStyle(
-                        fontSize: 20,
-                        color: Colors.grey[500],
-                      ),
-                    ),
-                  ],
-                ),
+                // Row(
+                //   children: [
+                //     Expanded(child: Container(),),
+                //     Text('Sign into your account',
+                //       style: TextStyle(
+                //         fontSize: 20,
+                //         color: Colors.grey[500],
+                //       ),
+                //     ),
+                //   ],
+                // ),
 
 
               ],
@@ -147,7 +160,7 @@ class SignUpPage extends StatelessWidget {
               ),
             ),
             child: Center(
-              child: Text('Sign in',
+              child: Text('Sign Up',
                 style: TextStyle(
                   fontSize: 30,
                   fontWeight: FontWeight.bold,
@@ -163,22 +176,37 @@ class SignUpPage extends StatelessWidget {
           Center(
             child: RichText(
               text: TextSpan(
-                text: "Don\'t have an account?",style:TextStyle(
+                text: "Sign up using one of the following methods",style:TextStyle(
                 color: Colors.grey[500],
-                fontSize: 20,
+                fontSize: 16,
               ),
-                children: [
-                  TextSpan(
-                    text: " Create",style:TextStyle(
-                    color: Colors.black,
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                  ),
-                  ),
 
-                ],
 
               ),
+            ),
+          ),
+          Center(
+            child: Wrap(
+              children: List<Widget>.generate(
+                3,
+                  (index){
+                  return Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: CircleAvatar(
+                      radius: 30,
+                        backgroundColor: Colors.white60,
+                      child: CircleAvatar(
+                        radius: 25,
+                        backgroundImage: AssetImage(
+                          "img/"+images[index]
+                        ),
+
+                      ),
+                    ),
+                  );
+                  }
+              ),
+
             ),
           ),
         ],
