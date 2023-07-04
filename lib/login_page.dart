@@ -1,4 +1,8 @@
+import 'package:firebase_app/signup_page.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -163,7 +167,7 @@ class LoginPage extends StatelessWidget {
             ),
 
           ),
-          SizedBox(height: w*0.2,),
+          SizedBox(height: w*0.04,),
 
 
           Center(
@@ -180,6 +184,7 @@ class LoginPage extends StatelessWidget {
               fontSize: 20,
                 fontWeight: FontWeight.bold,
             ),
+                recognizer: TapGestureRecognizer()..onTap=()=>Get.to(()=>SignUpPage())
               ),
 
               ],
