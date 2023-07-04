@@ -60,6 +60,9 @@ class LoginPage extends StatelessWidget {
                   ),
                   child: TextField(
                     decoration: InputDecoration(
+                      hintText: "Email",
+                      prefixIcon: Icon(Icons.email),
+                      
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(30),
                         borderSide: BorderSide(
@@ -96,6 +99,8 @@ class LoginPage extends StatelessWidget {
                   ),
                   child: TextField(
                     decoration: InputDecoration(
+                      hintText: "Password",
+                      prefixIcon: Icon(Icons.password),
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(30),
                         borderSide: BorderSide(
