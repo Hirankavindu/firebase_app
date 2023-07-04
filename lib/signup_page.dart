@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+class SignUpPage extends StatelessWidget {
+  const SignUpPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,11 +16,11 @@ class LoginPage extends StatelessWidget {
             height: h*0.3,
             decoration: const BoxDecoration(
               image: DecorationImage(
-                image: AssetImage(
-                  'img/loginimg.png'
+                  image: AssetImage(
+                      'img/loginimg.png'
 
-              ),
-                fit: BoxFit.cover
+                  ),
+                  fit: BoxFit.cover
               ),
             ),
 
@@ -46,16 +46,16 @@ class LoginPage extends StatelessWidget {
                 SizedBox(height: 50,),
                 Container(
                   decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(30),
-                    boxShadow: [
-                      BoxShadow(
-                        blurRadius: 10,
-                        spreadRadius: 7,
-                        offset: Offset(1, 1),
-                        color: Colors.grey.withOpacity(0.2),
-                      ),
-                    ]
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(30),
+                      boxShadow: [
+                        BoxShadow(
+                          blurRadius: 10,
+                          spreadRadius: 7,
+                          offset: Offset(1, 1),
+                          color: Colors.grey.withOpacity(0.2),
+                        ),
+                      ]
                   ),
                   child: TextField(
                     decoration: InputDecoration(
@@ -163,27 +163,26 @@ class LoginPage extends StatelessWidget {
           Center(
             child: RichText(
               text: TextSpan(
-              text: "Don\'t have an account?",style:TextStyle(
-              color: Colors.grey[500],
-              fontSize: 20,
-            ),
-              children: [
-              TextSpan(
-              text: " Create",style:TextStyle(
-              color: Colors.black,
-              fontSize: 20,
-                fontWeight: FontWeight.bold,
-            ),
+                text: "Don\'t have an account?",style:TextStyle(
+                color: Colors.grey[500],
+                fontSize: 20,
               ),
+                children: [
+                  TextSpan(
+                    text: " Create",style:TextStyle(
+                    color: Colors.black,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
+                  ),
 
-              ],
+                ],
 
-            ),
+              ),
             ),
           ),
         ],
       ),
-
     );
   }
 }
